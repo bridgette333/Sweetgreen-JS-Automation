@@ -1,0 +1,19 @@
+{
+  "name": "seleniumautomationjs",
+  "version": "1.0.0",
+  "description": "selenium automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 100000"
+  },
+  "author": "Bridgette",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "chai": "^4.2.0",
+    "geckodriver": "~0.26.0",
+    "mocha": "^6.2.2",
+    "selenium-webdriver": "^4.0.0-alpha.5",
+    "yarn": "^1.19.1"
+  }
+}
