@@ -3,10 +3,10 @@ const {Builder, By, Key, until} = require("selenium-webdriver");
 const assert = require("assert");
 const { expect } = require("chai");
 
-describe("Sweetgreen homepage", function() {
+describe("Sweetgreen homepage", () => {
     let driver;
 
-    before(async function() {
+    before(() => {
         driver = new Builder().forBrowser("firefox").build();
     })
 
@@ -50,6 +50,6 @@ describe("Sweetgreen homepage", function() {
         var productCost = await driver.wait(until.elementLocated(By.xpath("//*[@data-test-id='menu-product-name-spicy thai chicken bowl']" +
             "//span[@class='product-cost']"))).getText();
         assert.equal(productCost, "$12.50");
-    after(() => driver && driver.quit());
     });
+    after(() => driver && driver.quit());
 });
