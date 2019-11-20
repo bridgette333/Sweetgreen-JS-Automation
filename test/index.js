@@ -10,7 +10,7 @@ describe("Sweetgreen homepage", function() {
         driver = new Builder().forBrowser("firefox").build();
     })
 
-    it("will load homepage and correct title", async () => {
+    it("Should load homepage and correct title", async () => {
 
         await driver.get("https://order.sweetgreen.com/");
         var title = await driver.getTitle();
@@ -18,19 +18,19 @@ describe("Sweetgreen homepage", function() {
         await driver.wait(until.elementLocated(By.xpath("//*[@data-test-id='location-input-text-field']//*[@id='ember1126_search']")), 2000);
     });
 
-    it("will let user search and navigate to search results", async () => {
+    it("Should let user search and navigate to search results", async () => {
         await driver.findElement(By.xpath("//*[@data-test-id='location-input-text-field']//*[@id='ember1126_search']")).sendKeys("Culver City",Key.RETURN);
         await driver.wait(until.elementLocated(By.xpath("//*[@id='restaurants']")), 3000);
         await driver.wait(until.elementLocated(By.xpath("//*[@class='map-outer small-12 large-7 xxlarge-9']")), 1000);
     });
 
-    it("will let user click on a restaurant and navigate to menu page", async () => {
+    it("Should let user click on a restaurant and navigate to menu page", async () => {
         await driver.wait(until.elementLocated(By.xpath("//*[@data-test-id='location-restaurant-card-Culver City: The Lab']")), 3000).click();
         await driver.wait(until.elementLocated(By.xpath("//*[@id='menu']")));
         await driver.wait(until.elementLocated(By.xpath("//*[@id='restaurants-menu']")));
     });
 
-    it("will display images and data about menu items", async () => {
+    it("Should display images and data about menu items", async () => {
         await driver.wait(until.elementLocated(By.xpath("//*[@data-test-id='menu-product-name-spicy thai chicken bowl']")));
         console.log("found the product")
         // check that title is right
